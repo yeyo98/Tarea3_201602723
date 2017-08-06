@@ -16,12 +16,18 @@ public class Tarea3_201602723 {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         int opcion1 = 0;
         int opcion2 = 0;
+        int cont = 0;
+        String personalizado;
+        //boolean falso = false;
         String[] usuarios = new String[5];
         
+        
+        do{
         System.out.println("     Tarea 3    ");
         System.out.println("    201602723   ");
         System.out.println("");
@@ -44,13 +50,17 @@ public class Tarea3_201602723 {
                     System.out.println("    Menu de usuarios    ");
                     System.out.println("");
                     System.out.println("1. Ingrese Usuarios");
-                    System.out.println("2. Mostrar todod los Usuarios");
+                    System.out.println("2. Mostrar todos los Usuarios");
                     System.out.println("3. Mostrar un usuario Personalizado");
                     System.out.println("4. Menu Principal");
                     System.out.println("5. Salir");
                     
+                    try{
                     Scanner op2 = new Scanner(System.in);
                     opcion2 = op2.nextInt();
+                    } catch(Exception e){
+                        System.out.println("Ingrese un valor correcto");
+                    }
                     
                         switch(opcion2){
                             
@@ -62,59 +72,59 @@ public class Tarea3_201602723 {
                                     String user = sv.nextLine();
                                     
                                     usuarios[i] = user;
-                                
                                 }
                                 break;
                             }
                             
                              case 2:{
                                  for(int i =0; i<5 ;i++){
-                                 
+                                     
+                                     System.out.println("");
+                                     System.out.println((i+1) +". " +usuarios[i]);
                                  }
                                 
                                 break;
                             }
                              
-                             case 3:{
-                                
+                             case 3:{ 
+                                 
+                                 System.out.println("Mostrar un usario Personalizado");
+                                 System.out.println("      Ingrese Usuario      ");
+                                 
+                                 Scanner pe = new Scanner(System.in);
+                                 personalizado = pe.nextLine();
+                                 
+                                 for(int i=0; i<5 ;i++){
+                                     if(usuarios[i] == personalizado){
+                                         cont ++;
+                                     }
+                                 }  
+                                 if(cont == 1){
+                                    System.out.println("hola "+personalizado);
+                                 }else{
+                                    System.out.println("fallo");
+                                 }
                                 break;
                             }
                              
-                             case 4:{
-                                
+                             case 5:{
+                                 opcion1 = 3;
                                 break;
                             }
                         
                         }
                 
-                }while(opcion2!=5);
+                }while(opcion2!=4 && opcion2!=5);
             }
             
             case 2: {
             
                 break;
-            }
-            
-            case 3: {
-            
-                break;
-            }
-            
+            } 
             
         }
-        
+        }while(opcion1!=3);
     }
     
-    //metodos
-    /*public void Usuarios(String pri, String seg, String ter, String cuart, String quin){
-        String[] users = new String[5];
-        
-        users[0] = pri;
-        users[1] = seg;
-        users[2] = ter;
-        users[3] = cuart;
-        users[4] = quin;
-        
-    }*/
     
 }
