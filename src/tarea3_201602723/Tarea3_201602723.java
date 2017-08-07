@@ -23,8 +23,8 @@ public class Tarea3_201602723 {
         int opcion2 = 0;
         int cont = 0;
         String personalizado;
-        //boolean falso = false;
         String[] usuarios = new String[5];
+        String palabra;
         
         
         do{
@@ -94,16 +94,13 @@ public class Tarea3_201602723 {
                                  Scanner pe = new Scanner(System.in);
                                  personalizado = pe.nextLine();
                                  
-                                 for(int i=0; i<5 ;i++){
-                                     if(usuarios[i] == personalizado){
-                                         cont ++;
+                                 //for(int i=0; i<5 ;i++){
+                                     if(usuarios[0] == personalizado){
+                                     cont = cont+1;
                                      }
-                                 }  
-                                 if(cont == 1){
-                                    System.out.println("hola "+personalizado);
-                                 }else{
-                                    System.out.println("fallo");
-                                 }
+                             //}//fin de for
+                                 System.out.println(cont);
+                                 
                                 break;
                             }
                              
@@ -111,20 +108,49 @@ public class Tarea3_201602723 {
                                  opcion1 = 3;
                                 break;
                             }
-                        
                         }
-                
                 }while(opcion2!=4 && opcion2!=5);
-            }
+                    break;
+            }//fin del caso 1
             
+            //inicio caso2
             case 2: {
-            
+                System.out.println("    Palabras Palindromas   ");
+                System.out.println("    Ingresar palabras      ");
+                
+                Scanner pa = new Scanner(System.in);
+                palabra = pa.nextLine();
+                
+                
                 break;
-            } 
+            } // fin caso 2
             
         }
         }while(opcion1!=3);
     }
     
+    /*public String palabra(String palabra){
+        String aux = "";
+        
+        for(int i = 0; i<palabra.length() ;i++){
+            
+            if(!(palabra.substring(i, i+1).equals(" ")
+                    || palabra.substring(i, i+1).equals(",")
+                    || palabra.substring(i, i+1).equals("¿")
+                    || palabra.substring(i, i+1).equals("?")
+                    || palabra.substring(i, i+1).equals(".")
+                    || palabra.substring(i, i+1).equals("¡")
+                    || palabra.substring(i, i+1).equals("!"))){
+            
+                aux = aux + palabra.substring(i, i+1);
+            }
+        }
+        
+        for(int i=0; i<aux.length() ;i++){
+            if(!aux.substring(i, i+1).equals(aux.substring(aux.length()-i-1, i)))
+                return System.out.println("");
+        }
+        
+    }*/
     
 }
