@@ -121,6 +121,11 @@ public class Tarea3_201602723 {
                 Scanner pa = new Scanner(System.in);
                 palabra = pa.nextLine();
                 
+                if(palabra(palabra)){
+                    System.out.println("si");
+                }else{
+                    System.out.println("no");
+                }
                 
                 break;
             } // fin caso 2
@@ -129,10 +134,11 @@ public class Tarea3_201602723 {
         }while(opcion1!=3);
     }
     
-    /*public String palabra(String palabra){
+    public static boolean palabra(String palabra){
         String aux = "";
+        int n = palabra.length();
         
-        for(int i = 0; i<palabra.length() ;i++){
+        for(int i = 0; i<n ;i++){
             
             if(!(palabra.substring(i, i+1).equals(" ")
                     || palabra.substring(i, i+1).equals(",")
@@ -143,14 +149,15 @@ public class Tarea3_201602723 {
                     || palabra.substring(i, i+1).equals("!"))){
             
                 aux = aux + palabra.substring(i, i+1);
+                }
             }
+                n = aux.length();
+                 for(int i=0; i<n/2 ;i++){
+                    if(!aux.substring(i, i+1).equals(aux.substring(n -i-1, n - i))){
+                return false;
+                }
+             }
+              return true;
         }
-        
-        for(int i=0; i<aux.length() ;i++){
-            if(!aux.substring(i, i+1).equals(aux.substring(aux.length()-i-1, i)))
-                return System.out.println("");
-        }
-        
-    }*/
     
 }
