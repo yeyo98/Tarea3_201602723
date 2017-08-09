@@ -94,12 +94,21 @@ public class Tarea3_201602723 {
                                  Scanner pe = new Scanner(System.in);
                                  personalizado = pe.nextLine();
                                  
-                                 //for(int i=0; i<5 ;i++){
-                                     if(usuarios[0] == personalizado){
-                                     cont = cont+1;
+                                 for(int i=0; i<5 ;i++){
+                                     cont=0;
+                                     if(usuarios[i].equals(personalizado)){
+                                         
+                                         System.out.println("");
+                                         System.out.println("   Usuario    ");
+                                         System.out.println(personalizado);
+                                         
+                                     }else{
+                                         cont++;
                                      }
-                             //}//fin de for
-                                 System.out.println(cont);
+                                     if(cont == 5){
+                                         System.out.println("ERROR! No existe ningun usuario con esta coincidencia");
+                                     }
+                             }//fin de for
                                  
                                 break;
                             }
@@ -122,9 +131,9 @@ public class Tarea3_201602723 {
                 palabra = pa.nextLine();
                 
                 if(palabra(palabra)){
-                    System.out.println("si");
+                    System.out.println("¡SI ES PALINDROMA!!");
                 }else{
-                    System.out.println("no");
+                    System.out.println("¡NO ES PALINDROMA!!");
                 }
                 
                 break;
